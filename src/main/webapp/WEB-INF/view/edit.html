@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<form action="editSave" method="POST">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" th:value="*{user.username}">
+    <br><br>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="text" th:value="*{user.password}">
+<!--    <br>-->
+
+    <br>
+    <br>
+    <label>Role</label>
+    <select multiple size="3" name="role">
+        <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+        <option value="ROLE_USER">ROLE_USER</option>
+    </select>
+
+    <br><br>
+    <input type="hidden" name="id" th:value="*{user.id}">
+    <input type="submit" value="Save">
+
+</form>
+
+<br><br>
+<a th:href="@{/admin/users}">
+    <input type="submit" value="All Users"/>
+</a>
+</body>
+
+</html>

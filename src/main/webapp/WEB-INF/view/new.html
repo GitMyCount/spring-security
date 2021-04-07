@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>New</title>
+</head>
+<body>
+<br>
+<form action="new" method="post">
+    <label>Username</label>
+    <input type="text" name="username" required="required">
+    <br><br>
+    <label>Password</label>
+    <input type="text" name="password" required="required">
+    <br><br><br>
+    <label>Role</label>
+    <select multiple size="3" name="role">
+        <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+        <option value="ROLE_USER">ROLE_USER</option>
+    </select>
+
+    <br><br>
+    <button type="submit">Save</button>
+</form>
+
+<br><br>
+<a th:href="@{/admin/users}">
+    <input type="submit" value="All Users"/>
+</a>
+
+</body>
+
+</html>

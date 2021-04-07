@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Roles</th>
+    </tr>
+    <tr>
+        <td th:text="${user.username}"/>
+        <td th:text="${user.password}"/>
+        <td th:text="${user.roles}"/>
+
+    </tr>
+</table>
+
+<br>
+
+<a th:href="@{/admin/users}">
+    <input type="submit" value="All Users"/>
+</a>
+
+<br><br>
+
+<a th:href="@{/logout}">
+    <input type="submit" value="Logout"/>
+</a>
+
+</body>
+</html>

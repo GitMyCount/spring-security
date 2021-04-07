@@ -1,0 +1,24 @@
+package com.service;
+
+import com.dao.UserDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+@Service("userDetailServiceImpl")
+public class UserDetailServiceImpl implements UserDetailsService {
+
+    private final UserDao userDao;
+
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        return userDao.getUserByName(s);
+    }
+
+    @Autowired
+    public UserDetailServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
+}
